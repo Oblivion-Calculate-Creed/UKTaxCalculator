@@ -7,6 +7,11 @@ def main():
     grosspay = income
     nationalinsurance = 0.0
     taxablewage = income-12570
+    notax = "N/A"
+
+    if taxablewage <= 0:
+        taxablewage = notax
+    else: taxablewage = taxablewage
 
     if income >= 150000:
         tax = ((income - 150000) * .45) + \
@@ -42,14 +47,14 @@ def main():
     print('----------')
     print(name)
     print('----------')
-    print("Gross Pay:", grosspay)
-    print("Taxable Pay £", taxablewage)
+    print("Gross Pay: £", grosspay)
+    print("Taxable Pay: £",taxablewage)
     print('----------')
-    print("Amount you will pay in tax: £", tax)
-    print("Amount you will pay in NI: £", nationalinsurance)
+    print("Amount you will pay in tax: £",tax)
+    print("Amount you will pay in NI: £",nationalinsurance)
     print('----------')
-    print("Net Pay (after deductions): £", afterdeductions)
-    print("Monthly Salary: £", floatmonthlyincome)
+    print("Net Pay (after deductions): £",afterdeductions)
+    print("Monthly Salary: £",floatmonthlyincome)
 
 
 main()
